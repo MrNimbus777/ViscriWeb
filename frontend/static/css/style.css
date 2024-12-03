@@ -36,7 +36,7 @@ body {
     overflow-x: hidden;
 }
 
-body>div {
+body>div:not(#login_menu_container) {
     width: 90vw;
     min-height: 100vh;
     background-color: var(--color_lightBg);
@@ -122,6 +122,15 @@ div.logo {
     width: clamp(2px, 10vw, 32px);
     height: clamp(2px, 10vw, 32px);
 }
+
+div.login {
+    background-image: url("../images/login_avatar.png");
+    background-position: 50% 0;
+    background-size: cover;
+    width: clamp(2px, 10vw, 32px);
+    height: clamp(2px, 10vw, 32px);
+}
+
 
 div#menu {
     display: flex;

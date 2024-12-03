@@ -109,6 +109,27 @@ if (window.innerWidth <= 768) {
         )
     };
 }
+
+const login_div = document.querySelector("div.login");
+let login_menu_toggle = false;
+if(login_div != null) {
+    login_div.addEventListener('click', e => {
+        const container = document.createElement('div');
+        container.id = 'login_menu_container';
+        container.style.width = '100vw';
+        container.style.height = window.innerHeight+"px";
+        container.style.position = 'absolute';
+        container.style.left = "0";
+        container.style.top = "0";
+        container.style.zIndex = "2000";
+        container.style.display = 'flex';
+        container.style.alignContent = 'center';
+        container.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        document.body.appendChild(container);
+        document.body.style.overflow = "hidden";
+    })
+}
+
 //mobile menu
 const mobile_menu_btn = document.querySelector("img#mobile-menu-btn");
 const mobile_menu = document.querySelector("div#mobile-menu");
