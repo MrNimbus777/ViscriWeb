@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - Services</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v=2">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% url 'index' %}">
+                <div class="logo"></div>
+            </a>
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a class="active" href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a class="active" href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a href="{% url 'events' %}">Events</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="services">
+            <h1>Services Offered in Viscri Village</h1>
+            <div class="grid">
+                <section class="apear-animation">
+                    <img src="{% static 'images/service1.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Assistance with Documents</h2>
+                    <p>We provide assistance with various documents such as residency permits, property registrations, and more.</p>
+                    <button class="buy">€20 / service</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service2.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Guided Tours</h2>
+                    <p>Explore the charming village of Viscri with our knowledgeable guides. Discover the history, culture, and landmarks of the area.</p>
+                    <button class="buy">€30 / person</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service3.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Accommodation Booking</h2>
+                    <p>Let us assist you in finding the perfect accommodation for your stay in Viscri, whether it's a traditional guesthouse or a cozy room in a local home.</p>
+                    <button class="buy">€10 / booking</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service4.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Traditional Crafts Workshops</h2>
+                    <p>Immerse yourself in the rich cultural heritage of Viscri by participating in traditional crafts workshops. Learn pottery, weaving, and more from local artisans.</p>
+                    <button class="buy">€25 / workshop</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service5.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Transylvania Cuisine Experience</h2>
+                    <p>Indulge in the flavors of Transylvania with our authentic culinary experience. Enjoy traditional dishes prepared with locally-sourced ingredients.</p>
+                    <button class="buy">€35 / person</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service6.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Bicycle Rental</h2>
+                    <p>Explore the scenic beauty of Viscri and its surroundings on two wheels. Rent a bicycle for a day and enjoy the freedom to roam.</p>
+                    <button class="buy">€15 / day</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service7.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Language Translation Services</h2>
+                    <p>Need help communicating in Viscri? Our translation services can assist you with language barriers during your stay.</p>
+                    <button class="buy">€15 / hour</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service8.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Local Handicrafts Shopping</h2>
+                    <p>Take home a piece of Viscri's heritage with handcrafted souvenirs and gifts. Browse through a variety of locally-made items.</p>
+                    <button class="buy">Buy</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service9.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Horse-drawn Carriage Rides</h2>
+                    <p>Experience the nostalgia of traveling through Viscri in a traditional horse-drawn carriage. Enjoy a leisurely ride through the village.</p>
+                    <button class="buy">€20 / ride</button>
+                </section>
+                <section class="apear-animation">
+                    <img src="{% static 'images/service10.jpg' %}" alt="">
+                    <div class="overlay"></div>
+                    <h2>Photography Tours</h2>
+                    <p>Capture the beauty of Viscri with a professional photography tour. Learn tips and tricks while exploring picturesque spots.</p>
+                    <button class="buy">€40 / person</button>
+                </section>
+            </div>
+        </article>
+
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}" alt="Email:">
+                            <h1>direct@viscri.ro</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}" alt="Twitter:">
+                            <h1>twitter.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}" alt="Discord:">
+                            <h1>discord.com</h1>
+                        </a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}" alt="Instagram:">
+                            <h1>instagram.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}" alt="Tiktok:">
+                            <h1>tiktok.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}" alt="Facebook:">
+                            <h1>facebook.com</h1>
+                        </a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="{% static 'javascript/script.js' %}?v=2"></script>
+</html>

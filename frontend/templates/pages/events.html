@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - Events</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v=2">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% url 'index' %}">
+                <div class="logo"></div>
+            </a>
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a class="active" href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a class="active" href="{% url 'events' %}">Events</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="events">
+            <header>
+                <h1>Events and Experiences</h1>
+                <p>Join us in Viscri for a variety of events celebrating our rich heritage and vibrant community. Check
+                    out our calendar for festivals, markets, tours, and more!</p>
+            </header>
+            <section>
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>1. Annual Flower Festival</h3>
+                            <p class="date">May 15th</p>
+                        </div>
+                        <p class="description">Join us in celebrating the vibrant colors of spring at our Annual Flower
+                            Festival. Stroll through the
+                            picturesque village streets adorned with blooming flowers of all kinds, enjoy live music
+                            performances, and indulge in local delicacies.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event2.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>2. Traditional Harvest Festival</h3>
+                            <p class="date">September 20th</p>
+                        </div>
+                        <p class="description">Experience the essence of rural life at our Traditional Harvest Festival.
+                            Participate in age-old
+                            agricultural practices, such as harvesting crops and pressing grapes, and savor traditional
+                            dishes
+                            prepared with freshly harvested ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event3.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>3. Village Fair and Market Day</h3>
+                            <p class="date">July 10th</p>
+                        </div>
+                        <p class="description">Discover the charm of our local artisans and vendors at the Village Fair
+                            and
+                            Market Day. Browse
+                            through a variety of handmade crafts, artisanal goods, and locally grown produce while
+                            enjoying
+                            live
+                            entertainment and family-friendly activities.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>4. Historical Walking Tour</h3>
+                            <p class="date">Every Saturday</p>
+                        </div>
+                        <p class="description">Step back in time and explore the rich history of our village with a
+                            guided
+                            Historical Walking Tour.
+                            Visit iconic landmarks, ancient ruins, and preserved heritage sites while learning
+                            fascinating
+                            stories about the village's past.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>5. Seasonal Food Festival</h3>
+                            <p class="date">October 5th - 7th</p>
+                        </div>
+                        <p class="description">Indulge your taste buds in a culinary journey through the seasons at our
+                            Seasonal Food Festival.
+                            Sample an array of dishes featuring seasonal ingredients sourced from local farms and enjoy
+                            cooking
+                            demonstrations by renowned chefs.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>6. Outdoor Concert Series</h3>
+                            <p class="date">Every Friday night</p>
+                        </div>
+                        <p class="description">Immerse yourself in the enchanting melodies of our Outdoor Concert
+                            Series.
+                            Set against the backdrop
+                            of stunning natural landscapes, these musical performances showcase a diverse range of
+                            genres
+                            and
+                            talents, sure to captivate audiences of all ages.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>7. Community Volunteer Day</h3>
+                            <p class="date">April 25th</p>
+                        </div>
+                        <p class="description">Come together with fellow villagers and make a positive impact on our
+                            community during Community
+                            Volunteer Day. Engage in various volunteer activities, such as neighborhood cleanups, tree
+                            planting,
+                            and community garden maintenance, fostering a sense of unity and pride.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>8. Artisan Workshop Series</h3>
+                            <p class="date">Every Wednesday</p>
+                        </div>
+                        <p class="description">Unleash your creativity and learn new skills at our Artisan Workshop
+                            Series.
+                            Led by talented local
+                            artisans, these hands-on workshops cover a wide range of traditional crafts, including
+                            pottery,
+                            weaving, woodworking, and more.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>9. Nature Photography Expedition</h3>
+                            <p class="date">June 8th</p>
+                        </div>
+                        <p class="description">Embark on a journey of discovery and capture the breathtaking
+                            beauty of
+                            our
+                            village's natural
+                            landscapes on a Nature Photography Expedition. Guided by experienced photographers,
+                            explore
+                            hidden
+                            gems and scenic vistas while honing your photography skills.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <img src="{% static 'images/event1.jpg' %}" alt="">
+                    <div class="event-box">
+                        <div class="header">
+                            <h3>10. Family Movie Night Under the Stars</h3>
+                            <p class="date">August 30th</p>
+                        </div>
+                        <p class="description">Gather your loved ones for a magical evening of cinema under
+                            the
+                            twinkling
+                            stars at our Family Movie
+                            Night. Bring blankets and picnic baskets to enjoy family-friendly films
+                            projected outdoors,
+                            creating
+                            cherished memories under the night sky.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}"
+                                alt="Email:">
+                            <h1>direct@viscri.ro</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}" alt="Twitter:">
+                            <h1>twitter.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}"
+                                alt="Discord:">
+                            <h1>discord.com</h1>
+                        </a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}"
+                                alt="Instagram:">
+                            <h1>instagram.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}"
+                                alt="Tiktok:">
+                            <h1>tiktok.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}"
+                                alt="Facebook:">
+                            <h1>facebook.com</h1>
+                        </a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="{% static 'javascript/script.js' %}?v=2"></script>
+</html>

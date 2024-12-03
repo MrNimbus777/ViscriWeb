@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - About Us</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v=2">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% url 'index' %}"><div class="logo"></div></a>
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a class="active" href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a class="active" href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a href="{% url 'events' %}">Events</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="header">
+            <h1>About Viscri</h1>
+        </article>
+        <article class="aboutus">
+            <section class="apear-animation">
+                <div class="hover off">
+                    <p>At the heart of our journey lies the quaint village of Viscri, a hidden gem nestled amidst the rolling hills and lush meadows of Transylvania. Here, history comes alive in the <strong>Fortified Church of Viscri</strong>, a UNESCO World Heritage Site dating back to the 12th century. Wander through its ancient walls and immerse yourself in the echoes of centuries past.</p>
+                </div>
+                <img src="{% static 'images/fortified_church.jpg' %}" alt="Fortified Church of Viscri">
+            </section>
+            
+            <section class="apear-animation">
+                <div class="hover off">
+                    <p>But Viscri is more than just its historic landmarks, it's a tapestry of tradition, culture, and warm hospitality. Explore the winding streets lined with <strong>traditional houses</strong>, each adorned with vibrant facades and intricate woodwork, and discover the timeless allure of rural life.</p>
+                </div>
+                <img src="{% static 'images/traditional_houses.jpg' %}" alt="Traditional Houses">
+            </section>
+            
+            <section class="apear-animation">
+                <div class="hover off">
+                    <p>At Discover Viscri, we offer a range of services tailored to your every need. Whether you're craving adventure or seeking tranquility, our knowledgeable guides are here to curate the perfect experience for you. From <strong>guided tours</strong> through hidden corners of the village to <strong>traditional crafts workshops</strong> where you can immerse yourself in local artistry, we invite you to explore Viscri like never before.</p>
+                </div>
+                <img src="{% static 'images/guided_tour.jpg' %}" alt="Guided Tour">
+                <img src="{% static 'images/traditional_crafts.jpg' %}" alt="Traditional Crafts Workshop">
+            </section>
+            
+            <section class="apear-animation">
+                <div class="hover off">
+                    <p>And when it's time to unwind, let us be your trusted local partner. From assisting with <strong>accommodation bookings</strong> in cozy guesthouses to guiding you through the <strong>local handicrafts</strong> market, our dedicated team is here to ensure your stay in Viscri is nothing short of extraordinary.</p>
+                </div>
+                <img src="{% static 'images/local_handicrafts.jpg' %}" alt="Local Handicrafts Shopping">
+            </section>
+        </article>
+        <article class="after-aboutus apear-animation">
+            <img class="avatar" src="{% static 'images/avatar2.png' %}" alt="">
+            <p>Join us on an unforgettable journey of discovery and exploration as we invite you to experience the magic of Viscri, where history, culture, and natural beauty converge to create memories that last a lifetime.</p>
+            <p>For inquiries and bookings, <a href="{% url 'contact' %}">contact us</a> today!</p>
+        </article>
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}" alt="Email:"><h1>direct@viscri.ro</h1></a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}" alt="Twitter:"><h1>twitter.com</h1></a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}" alt="Discord:"><h1>discord.com</h1></a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}" alt="Instagram:"><h1>instagram.com</h1></a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}" alt="Tiktok:"><h1>tiktok.com</h1></a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}" alt="Facebook:"><h1>facebook.com</h1></a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="{% static 'javascript/script.js' %}?v=2"></script>
+</body>
+</html>

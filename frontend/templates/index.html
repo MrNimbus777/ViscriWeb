@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - Home</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v=2">
+</head>
+
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% url 'index' %}">
+                <div class="logo"></div>
+            </a>
+            <div id="menu">
+                <ul>
+                    <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a href="{% url 'events' %}">Events</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="slider">
+            <section class="slider">
+                <button class="prev_btn">◀</button>
+                <div>
+                    <img class="prev" src="{% static 'images/viscri_1.jpg' %}" alt="VISCRI 1">
+                    <img class="current" src="{% static 'images/viscri_2.jpg' %}" alt="VISCRI 2">
+                    <img class="next" src="{% static 'images/viscri_3.jpg' %}" alt="VISCRI 3">
+                    <img src="{% static 'images/viscri_4.jpg' %}" alt="VISCRI 4">
+                    <img src="{% static 'images/viscri_5.jpg' %}" alt="VISCRI 5">
+                    <img src="{% static 'images/viscri_6.jpg' %}" alt="VISCRI 6">
+                    <img src="{% static 'images/viscri_7.jpg' %}" alt="VISCRI 7">
+                    <img src="{% static 'images/viscri_8.jpg' %}" alt="VISCRI 8">
+                    <img src="{% static 'images/viscri_9.jpg' %}" alt="VISCRI 9">
+                    <img src="{% static 'images/viscri_10.jpg' %}" alt="VISCRI 10">
+                </div>
+                <button class="next_btn">▶</button>
+            </section>
+        </article>
+        <article class="welcome apear-animation">
+            <img class="avatar" src="{% static 'images/avatar1.png' %}" alt="">
+            <h1>Welcome to Viscri</h1>
+            <p>Step into a world where history meets beauty, where cobblestones whisper tales of generations past,
+                and
+                sunsets paint masterpieces across the sky. Nestled amidst rolling hills, our village invites you to
+                explore its treasures and feel the warmth of its community. Immerse yourself in charming streets
+                adorned
+                with blooms, and indulge in local cuisine crafted with tradition. Join us in festivals showcasing
+                our
+                vibrancy and spirit. Whether seeking adventure or peace, Viscri welcomes you to discover magic
+                around
+                every corner. Come, be enchanted, and create memories in our timeless village.</p>
+        </article>
+        <article class="main-events">
+            <div class="background"></div>
+            <section>
+                <div class="event-item apear-animation">
+                    <a href="{% url 'events' %}"><img src="{% static 'images/event1.jpg' %}" alt=""></a>
+                    <h2>Annual Flower Festival</h2>
+                    <p>Join us in celebrating the vibrant colors of spring at our Annual Flower Festival. Stroll through the
+                        picturesque village streets adorned with blooming flowers of all kinds, enjoy live music
+                        performances, and indulge in local delicacies.</p>
+                </div>
+                <div class="event-item apear-animation">
+                    <a href="{% url 'events' %}"><img src="{% static 'images/event2.jpg' %}" alt=""></a>
+                    <h2>Traditional Harvest Festival</h2>
+                    <p>Experience the essence of rural life at our Traditional Harvest Festival. Participate in age-old
+                        agricultural practices, such as harvesting crops and pressing grapes, and savor traditional dishes
+                        prepared with freshly harvested ingredients.</p>
+                </div>
+                <div class="event-item apear-animation">
+                    <a href="{% url 'events' %}"><img src="{% static 'images/event3.jpg' %}" alt=""></a>
+                    <h2>Village Fair and Market Day</h2>
+                    <p>Discover the charm of our local artisans and vendors at the Village Fair and Market Day. Browse
+                        through a variety of handmade crafts, artisanal goods, and locally grown produce while enjoying live
+                        entertainment and family-friendly activities.</p>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}"
+                                alt="Email:">
+                            <h1>direct@viscri.ro</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}" alt="Twitter:">
+                            <h1>twitter.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}"
+                                alt="Discord:">
+                            <h1>discord.com</h1>
+                        </a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}"
+                                alt="Instagram:">
+                            <h1>instagram.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}" alt="Tiktok:">
+                            <h1>tiktok.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}"
+                                alt="Facebook:">
+                            <h1>facebook.com</h1>
+                        </a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="{% static 'javascript/slider.js' %}?v=2"></script>
+<script src="{% static 'javascript/script.js' %}?v=2"></script>
+</html>

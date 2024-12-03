@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - Attractions</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v=2">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% static 'index' %}">
+                <div class="logo"></div>
+            </a>
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a class="active" href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a class="active" href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a href="{% url 'events' %}">Events</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="attractions">
+            <h1>Attractions in Viscri</h1>
+            <section>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/fortified_church.jpg' %}" alt="Fortified Church of Viscri">
+                    <h2>Fortified Church of Viscri</h2>
+                    <p>The Fortified Church of Viscri is a UNESCO World Heritage Site and one of the most iconic
+                        attractions in the village. Dating back to the 12th century, this well-preserved church features a unique
+                        blend of Saxon and Romanian architectural styles. Visitors can explore its fortified walls, defensive
+                        towers, and interior adorned with ancient frescoes.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/traditional_houses.jpg' %}" alt="Traditional Houses">
+                    <h2>Traditional Houses</h2>
+                    <p>Wandering through the cobblestone streets of Viscri, visitors will encounter charming traditional
+                        houses adorned with colorful facades and intricate woodwork. These well-preserved homes offer a
+                        glimpse into the village's rich cultural heritage and rural way of life. Some houses even offer
+                        guided tours, allowing guests to step back in time and experience authentic Transylvanian
+                        hospitality.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/pastoral_landscapes.jpg' %}" alt="Pastoral Landscape">
+                    <h2>Pastoral Landscape</h2>
+                    <p>The pastoral landscape surrounding Viscri is a sight to behold, characterized by rolling hills,
+                        lush meadows, and quaint villages nestled among the Carpathian Mountains. Visitors can embark on
+                        scenic hikes or horseback rides to explore the picturesque countryside, encountering grazing sheep,
+                        traditional haystacks, and blooming wildflowers along the way. It's the perfect retreat for
+                        nature lovers seeking tranquility and serenity.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/traditional_crafts.jpg' %}" alt="Local Crafts Workshops">
+                    <h2>Local Crafts Workshops</h2>
+                    <p>Viscri is renowned for its skilled artisans who specialize in traditional crafts such as pottery,
+                        weaving, and woodcarving. Visitors can visit local workshops to observe craftsmen at work and
+                        purchase authentic handmade souvenirs to take home as cherished mementos of their visit.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/ethnographic_museum.jpg' %}" alt="Ethnographic Museum">
+                    <h2>Ethnographic Museum</h2>
+                    <p>The Ethnographic Museum of Viscri offers an insightful journey into the history, culture, and
+                        traditions of the local community. Through captivating exhibits featuring artifacts, photographs,
+                        and interactive displays, visitors can gain a deeper understanding of the village's heritage and
+                        the daily life of its inhabitants.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/nature_reserve.jpg' %}" alt="Nature Reserves">
+                    <h2>Nature Reserves</h2>
+                    <p>Surrounding Viscri, visitors will find pristine nature reserves and protected areas teeming with
+                        biodiversity. These natural sanctuaries provide opportunities for outdoor enthusiasts to engage
+                        in activities such as birdwatching, hiking, and wildlife spotting amidst breathtaking landscapes of
+                        forests, wetlands, and meadows.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/cultural_festival.jpg' %}" alt="Cultural Events and Festivals">
+                    <h2>Cultural Events and Festivals</h2>
+                    <p>Throughout the year, Viscri hosts a vibrant array of cultural events and festivals celebrating
+                        the village's rich traditions, music, and cuisine. From lively folk performances and traditional
+                        dance exhibitions to mouthwatering food stalls offering regional delicacies, these festivities offer
+                        visitors a delightful immersion into the local culture and community spirit.</p>
+                </div>
+                <div class="attraction">
+                    <img class="title" src="{% static 'images/historic_sites.jpg' %}" alt="Historic Sites">
+                    <h2>Historic Sites</h2>
+                    <p>In addition to the iconic fortified church, Viscri boasts a wealth of historic sites waiting to
+                        be explored. From ancient cemeteries and medieval ruins to archaeological excavations, these
+                        landmarks offer fascinating insights into the village's past and its enduring significance within the
+                        region's history.</p>
+                </div>
+            </section>
+        </article>
+
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}"
+                                alt="Email:"><h1>direct@viscri.ro</h1></a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}"
+                                alt="Twitter:"><h1>twitter.com</h1></a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}"
+                                alt="Discord:"><h1>discord.com</h1></a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}"
+                                alt="Instagram:"><h1>instagram.com</h1></a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}"
+                                alt="Tiktok:"><h1>tiktok.com</h1></a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}"
+                                alt="Facebook:"><h1>facebook.com</h1></a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="{% static 'javascript/script.js' %}?v=2"></script>
+</html>

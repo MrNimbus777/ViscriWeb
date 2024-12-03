@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISCRI - Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={{ timestamp }}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}?v={{ timestamp }}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+    <div>
+        <header>
+            <a class="active" href="{% static 'index.html' %}">
+                <div class="logo"></div>
+            </a>
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mobile">
+                <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
+                <div id="mobile-menu">
+                    <div id="mobile-menu-content" class="off">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'attractions' %}">Attractions</a></li>
+                            <li><a href="{% url 'events' %}">Events</a></li>
+                            <li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="contactus">
+            <section class="contactus">
+                <img src="{% static 'images/avatar3.png' %}" alt="">
+                <div class="contact-block">
+                    <div class="contact-obj">
+                        <h2>Contact Us</h2>
+                        <p>If you have any questions, suggestions, or concerns, please feel free to reach out to us
+                            using the form below.</p>
+                        <form id="contact-form">
+                            <div class="item">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="item">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="item">
+                                <label for="message">Message:</label>
+                                <textarea placeholder="Type your text here..." readonly>This is a sample textarea where you can only scroll through the content but not resize the box. The text is prefilled, and the size is fixed.</textarea>
+                            </div>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="response"></div>
+            </section>
+        </article>
+        <footer>
+            <section class="contact">
+                <div>
+                    <div><a target="_blank" href="https://mail.google.com/mail"><img src="{% static 'images/gmail_logo.png' %}"
+                                alt="Email:">
+                            <h1>direct@viscri.ro</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://twitter.com/"><img src="{% static 'images/x_logo.png' %}" alt="Twitter:">
+                            <h1>twitter.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://discord.com/"><img src="{% static 'images/discord_logo.png' %}"
+                                alt="Discord:">
+                            <h1>discord.com</h1>
+                        </a></div>
+                </div>
+                <div>
+                    <div><a target="_blank" href="https://instagram.com/"><img src="{% static 'images/instagram_logo.png' %}"
+                                alt="Instagram:">
+                            <h1>instagram.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://tiktok.com/"><img src="{% static 'images/tiktok_logo.png' %}"
+                                alt="Tiktok:">
+                            <h1>tiktok.com</h1>
+                        </a></div>
+                    <div><a target="_blank" href="https://facebook.com/"><img src="{% static 'images/facebook_logo.png' %}"
+                                alt="Facebook:">
+                            <h1>facebook.com</h1>
+                        </a></div>
+                </div>
+            </section>
+            <div class="logo"></div>
+            <p>© 2024. Design and implementation: Scutelnic Serghei. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="{% static 'javascript/script.js' %}?v={{ timestamp }}"></script>
+</html>
