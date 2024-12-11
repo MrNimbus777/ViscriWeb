@@ -1,3 +1,9 @@
+const max = function(x1, x2){
+    return x1 > x2 ? x1 : x2;
+}
+const min = function(x1, x2){
+    return x1 < x2 ? x1 : x2;
+}
 const root = document.querySelector(":root").style;
 let resizeList;
 let activate;
@@ -43,7 +49,6 @@ if (window.innerWidth <= 768) {
         }
     };
     activate = function (element) {
-        console.log("1");
         animate(element,
             () => {
                 element.style.transform = "";
@@ -109,26 +114,117 @@ if (window.innerWidth <= 768) {
         )
     };
 }
+const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-const login_div = document.querySelector("div.login");
-let login_menu_toggle = false;
-if(login_div != null) {
-    login_div.addEventListener('click', e => {
-        const container = document.createElement('div');
-        container.id = 'login_menu_container';
-        container.style.width = '100vw';
-        container.style.height = window.innerHeight+"px";
-        container.style.position = 'absolute';
-        container.style.left = "0";
-        container.style.top = "0";
-        container.style.zIndex = "2000";
-        container.style.display = 'flex';
-        container.style.alignContent = 'center';
-        container.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        document.body.appendChild(container);
-        document.body.style.overflow = "hidden";
-    })
+sendFetch = async function(method, headers, data, perform_response){
+    try {
+        headers = {
+            ...headers,
+            'X-CSRFToken': csrf_token,
+            'Content-Type': 'application/json',
+        };
+        const response = await fetch('/api/data/', {
+            'method': method,
+            'headers': headers,
+            'body': data ? JSON.stringify(data) : null,
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            perform_response(data);
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Submission failed.');
+    }
 }
+
+const login_button = document.querySelector("div.login");
+let login_menu_toggle = false;
+if(login_button != null) {
+    initLoginForm = function(div){
+        div.innerHTML = '<form class="login-form"><input type="text" id="username" name="username" placeholder="Username" required><input type="password" id="password" name="password" placeholder="Password" required><a href="#" class="forgot-password">Forgot your password?</a><button>Log In</button><a href="#" class="signup">Or Sign Up</a></form>';
+        const btn = div.querySelector(".signup");
+        btn.addEventListener('click', () => {
+            initSignUpForm(div);
+        });
+        const form = div.querySelector("form");
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+        const form_btn = div.querySelector("form button");
+        form_btn.addEventListener('click', () => {
+            
+        });
+    }
+    initSignUpForm = function(div){
+        div.innerHTML = '<form class="signup-form"><input type="text" id="username" name="username" placeholder="Username" required><input type="password" id="password" name="password1" placeholder="Password" required><input type="password" id="password2" name="password" placeholder="Confirm Password" required><button>Sign up</button><a href="#" class="login">Or Log In</a></form>';
+        const btn = div.querySelector(".login");
+        btn.addEventListener('click', () => {
+            initLoginForm(div);
+        });
+        const form = div.querySelector("form");
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+        const form_btn = div.querySelector("form button");
+        form_btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            const username = form['username'].value;
+            const password1 = form['password1'].value;
+            const password2 = form['password2'].value;
+            if(password1 === password2) {
+                const credentials = btoa(`${username}:${password1}`);
+                sendFetch('POST', {'Authorization' : `${credentials}`}, {}, (r) => {
+                    console.log(r);
+                });
+            } else alert("Password does not match")
+        });
+    }
+    login_button.addEventListener('click', () => {
+        if(!login_menu_toggle){
+            let container = document.createElement('div');
+            container.id = 'login_menu_container';
+            container.style.width = '100vw';
+            container.style.height = window.innerHeight+"px";
+            container.style.position = 'fixed';
+            container.style.left = "0";
+            container.style.top = "0";
+            container.style.zIndex = "2000";
+            container.style.display = 'flex';
+            container.style.alignItems = 'center';
+            container.style.justifyContent = 'center';
+            container.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            document.body.appendChild(container);
+            document.body.style.overflow = "hidden";
+            let login_menu = document.createElement("div");
+            login_menu.id = "login_menu";
+            login_menu.style.width = "calc(clamp(100px, 30vw, 500px))";
+            login_menu.style.height = "auto";
+            login_menu.style.backgroundColor = "var(--color_mediumBg)";
+            login_menu.style.borderRadius = "3vw";
+            initLoginForm(login_menu);
+            container.appendChild(login_menu);
+            setTimeout(() => login_menu_toggle = true, 1);
+            login_menu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            container.addEventListener('click', () => {
+                if(login_menu_toggle) {
+                    login_menu_toggle = false;
+                    container.remove();
+                    container = null;
+                    login_menu = null;
+                    document.body.style.overflow = "";
+                }
+            });
+        }
+    });
+}
+
 
 //mobile menu
 const mobile_menu_btn = document.querySelector("img#mobile-menu-btn");

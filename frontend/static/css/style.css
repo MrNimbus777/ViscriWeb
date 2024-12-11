@@ -80,7 +80,10 @@ body>div>header {
 div#mobile-menu {
     visibility: hidden;
 }
-
+div#menu {
+    display: flex;
+    align-items: center;
+}
 div#menu ul {
     margin: 0;
     padding: 0;
@@ -129,6 +132,68 @@ div.login {
     background-size: cover;
     width: clamp(2px, 10vw, 32px);
     height: clamp(2px, 10vw, 32px);
+}
+
+.login-form {
+    padding: 40px;
+}
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--color_lightTx);
+    text-align: center;
+}
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color_lightTx);
+    font-size: 18px;
+}
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background: var(--color_mediumBg2);
+    border: 1px solid var(--color_mediumBg);
+    border-radius: 4px;
+    font-size: 14px;
+}
+.login-form button {
+    margin-left: 30%;
+    width: 40%;
+    padding: 10px;
+    background: var(--color_lightBg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background: var(--color_mediumTx);
+}
+.login-form .forgot-password {
+    display: block;
+    text-align: right;
+    margin: 10px;
+    font-size: 12px;
+    color: var(--color_mediumTx);
+    text-decoration: none;
+}
+.login-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-form .signup {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+    color: var(--color_lightTx);
+    text-decoration: none;
+}
+.login-form .signup:hover {
+    text-decoration: underline;
 }
 
 
