@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from .views import signup
+from .views import *
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
@@ -11,5 +11,6 @@ urlpatterns = [
     path('services/', TemplateView.as_view(template_name='pages/services.html'), name='services'),
 
     
-    path('api/data/', signup, name='signup')
+    path('api/signup/', signup, name='signup'),
+    path('api/login/', login, name='login')
 ]

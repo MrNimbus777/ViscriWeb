@@ -114,16 +114,18 @@ if (window.innerWidth <= 768) {
         )
     };
 }
+
+
 const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-sendFetch = async function(method, headers, data, perform_response){
+sendFetch = async function(method, destination, headers, data, perform_response){
     try {
         headers = {
             ...headers,
             'X-CSRFToken': csrf_token,
             'Content-Type': 'application/json',
         };
-        const response = await fetch('/api/data/', {
+        const response = await fetch(`/api/${destination}/`, {
             'method': method,
             'headers': headers,
             'body': data ? JSON.stringify(data) : null,
@@ -178,8 +180,26 @@ if(login_button != null) {
             const password2 = form['password2'].value;
             if(password1 === password2) {
                 const credentials = btoa(`${username}:${password1}`);
-                sendFetch('POST', {'Authorization' : `${credentials}`}, {}, (r) => {
-                    console.log(r);
+                sendFetch('POST', "signup", {'Authorization' : `${credentials}`}, {}, (r) => {
+                    let status = r["status"];
+                    switch(status) {
+                        case "success" : {
+                            break;
+                        }
+                        case "existing" : {
+                            if(div.querySelector('form h3') == null){
+                                let a = document.createElement('h3');
+                                a.textContent = "This user already exists"
+                                div.querySelector('form').insertBefore(a, document.getElementById('username'));
+                                setTimeout(() => a.remove(), 5000);
+                            }
+                            break;
+                        }
+                        default : {
+                            alert("Uknown response");
+                            break;
+                        }
+                    }
                 });
             } else alert("Password does not match")
         });
