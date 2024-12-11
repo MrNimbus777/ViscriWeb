@@ -158,7 +158,39 @@ if(login_button != null) {
         });
         const form_btn = div.querySelector("form button");
         form_btn.addEventListener('click', () => {
-            
+            const username = form['username'].value;
+            const password = form['password'].value;
+            const credentials = btoa(`${username}:${password}`);
+            sendFetch('POST', "login", {'Authorization' : `${credentials}`}, {}, (r) => {
+                let status = r["status"];
+                switch(status) {
+                    case "success" : {
+                        break;
+                    }
+                    case "not_existing" : {
+                        if(div.querySelector('form h3') == null){
+                            let a = document.createElement('h3');
+                            a.textContent = "This user does not exist"
+                            div.querySelector('form').insertBefore(a, document.getElementById('username'));
+                            setTimeout(() => a.remove(), 5000);
+                        }
+                        break;
+                    }
+                    case "wrong_password" : {
+                        let inp = document.getElementById('password');
+                        inp.value = '';
+                        inp.placeholder = 'Wrong password';
+                        setTimeout(() => {
+                            inp.placeholder = 'Password';
+                        }, 5000);
+                        break;
+                    }
+                    default : {
+                        alert("Uknown response");
+                        break;
+                    }
+                }
+            });
         });
     }
     initSignUpForm = function(div){
@@ -201,7 +233,16 @@ if(login_button != null) {
                         }
                     }
                 });
-            } else alert("Password does not match")
+            } else {
+                if(div.querySelector('form h3') == null){
+                    let a = document.createElement('h3');
+                    a.textContent = "Passwords does not match."
+                    div.querySelector('form').insertBefore(a, document.getElementById('password'));
+                    document.getElementById('password').value = '';
+                    document.getElementById('password2').value = '';
+                    setTimeout(() => a.remove(), 5000);
+                }
+            }
         });
     }
     login_button.addEventListener('click', () => {

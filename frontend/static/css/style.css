@@ -159,6 +159,7 @@ div.login {
     font-size: 14px;
 }
 .login-form h3 {
+    font-size: clamp(2px, 2vw, 14px);
     color: rgb(163, 60, 60);
     text-align: left;
     margin: 0;
