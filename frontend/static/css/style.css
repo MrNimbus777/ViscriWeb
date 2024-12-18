@@ -29,14 +29,16 @@
 
 body {
     margin: 0;
-    padding: 0 5vw 0 5vw;
+    padding: 0 5vw;
     background-color: var(--color_darkBg);
     font-family: Roboto;
     overflow-y: scroll;
     overflow-x: hidden;
+    scrollbar-color: rebeccapurple green;
 }
 
-body>div:not(#login_menu_container) {
+
+body>div:first-child {
     width: 90vw;
     min-height: 100vh;
     background-color: var(--color_lightBg);
@@ -126,12 +128,45 @@ div.logo {
     height: clamp(2px, 10vw, 32px);
 }
 
-div.login {
+div.user {
     background-image: url("../images/login_avatar.png");
     background-position: 50% 0;
     background-size: cover;
     width: clamp(2px, 10vw, 32px);
     height: clamp(2px, 10vw, 32px);
+    cursor: pointer;
+    border-radius: 25%;
+}
+div#user_menu{
+    position: fixed;
+    z-index: 500;
+    width: min(95vw, max(600px, 25vw));
+    height: 25vw;
+    top: 52px;
+    left: 95vw;
+    background-color: var(--color_mediumBg);
+    transform: translateY(0) translateX(-100%);
+    transition: transform 200ms ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+div#user_menu.hidden{
+    transform: translateY(-100%) translateX(-100%);
+    transition: transform 200ms ease;
+}
+div#user_menu>div{
+    display: flex;
+}
+div#user_menu .avatar{
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+}
+div#user_menu img{
+    width: 32px;
+    height: 32px;
+    background-size: cover;
 }
 
 .login-form {

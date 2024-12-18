@@ -27,8 +27,12 @@
         padding: 0;
     }
 
-    body>div {
+    body>div:first-child {
         width: 100vw;
+    }
+
+    div#user_menu{
+        left: 100vw;
     }
 
     img#mobile-menu-btn {

@@ -19,7 +19,7 @@
 <body>
     <div>
         <header>
-            <a class="active" href="{% url 'index' %}">
+            <a href="{% url 'index' %}">
                 <div class="logo"></div>
             </a>
             <div id="menu">
@@ -31,7 +31,7 @@
                     <li><a href="{% url 'events' %}">Events</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
-                <div class="login"></div>
+                <div class="user"></div>
             </div>
             <div class="mobile">
                 <img id="mobile-menu-btn" src="{% static 'images/icon-menu.png' %}" alt="MENU">
@@ -45,7 +45,6 @@
                             <li><a href="{% url 'events' %}">Events</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
-                        <div class="login"></div>
                     </div>
                 </div>
             </div>
@@ -142,6 +141,7 @@
         </footer>
     </div>
 </body>
+<script src="{% static 'javascript/auth.js' %}"></script>
 <script src="{% static 'javascript/slider.js' %}"></script>
 <script src="{% static 'javascript/script.js' %}"></script>
 </html>
